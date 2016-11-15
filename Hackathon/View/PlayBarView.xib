@@ -6,24 +6,78 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayBarView" customModule="Hackathon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="516" height="103"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUL-hk-NxL">
-                    <rect key="frame" x="10" y="9" width="109" height="82"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HUL-hk-NxL">
+                    <rect key="frame" x="8" y="8" width="87" height="87"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="HUL-hk-NxL" secondAttribute="height" multiplier="1:1" id="E9h-xw-K37"/>
+                    </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ci-96-4bV">
+                    <rect key="frame" x="103" y="17" width="335" height="18"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoQ-9g-cuT">
+                    <rect key="frame" x="446" y="20" width="62" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="XoQ-9g-cuT" secondAttribute="height" multiplier="1:1" id="piM-Lz-p8T"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="img-playlist-add"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCh-tJ-cxG">
+                    <rect key="frame" x="103" y="71.5" width="335" height="12"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UJg-Bp-hm6">
+                    <rect key="frame" x="0.0" y="0.5" width="516" height="2"/>
+                    <color key="progressTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </progressView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XoQ-9g-cuT" firstAttribute="leading" secondItem="3Ci-96-4bV" secondAttribute="trailing" constant="8" id="0q4-3j-a9K"/>
+                <constraint firstItem="UJg-Bp-hm6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="24c-9f-ORm"/>
+                <constraint firstItem="3Ci-96-4bV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="5W8-Rt-JQN"/>
+                <constraint firstItem="XoQ-9g-cuT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="FXx-El-v85"/>
+                <constraint firstItem="UJg-Bp-hm6" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="JNg-dI-GTB"/>
+                <constraint firstItem="XoQ-9g-cuT" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" id="LPP-aR-XlV"/>
+                <constraint firstItem="qCh-tJ-cxG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="LWk-tz-b20"/>
+                <constraint firstItem="UJg-Bp-hm6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LgQ-cW-GdO"/>
+                <constraint firstAttribute="trailing" secondItem="XoQ-9g-cuT" secondAttribute="trailing" constant="8" id="Msi-gQ-bhW"/>
+                <constraint firstItem="HUL-hk-NxL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="cBN-8b-5g1"/>
+                <constraint firstItem="HUL-hk-NxL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dyc-zc-ESu"/>
+                <constraint firstItem="3Ci-96-4bV" firstAttribute="leading" secondItem="HUL-hk-NxL" secondAttribute="trailing" constant="8" id="e8P-8O-SX0"/>
+                <constraint firstItem="qCh-tJ-cxG" firstAttribute="leading" secondItem="HUL-hk-NxL" secondAttribute="trailing" constant="8" id="h8Z-cx-UKp"/>
+                <constraint firstItem="XoQ-9g-cuT" firstAttribute="leading" secondItem="qCh-tJ-cxG" secondAttribute="trailing" constant="8" id="jOd-Zu-GnU"/>
+                <constraint firstItem="HUL-hk-NxL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="pBt-fC-hCB"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="20.5" y="141.5"/>
+            <connections>
+                <outlet property="addButton" destination="XoQ-9g-cuT" id="MWm-vl-ygk"/>
+                <outlet property="artistLabel" destination="qCh-tJ-cxG" id="nyf-uB-h7P"/>
+                <outlet property="imageView" destination="HUL-hk-NxL" id="exC-kY-vOo"/>
+                <outlet property="nameLabel" destination="3Ci-96-4bV" id="xzU-Gd-KML"/>
+                <outlet property="progressView" destination="UJg-Bp-hm6" id="FnQ-uO-WyQ"/>
+            </connections>
+            <point key="canvasLocation" x="91" y="141.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="img-playlist-add" width="45" height="45"/>
+    </resources>
 </document>

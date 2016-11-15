@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var playBarView: PlayBarView?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -40,7 +42,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func loadPlayBarView(listControl: ListMusicControl, frame: CGRect) {
+        self.playBarView = Bundle.main.loadNibNamed(playBarViewID, owner: self, options: nil)?.first as? PlayBarView
+        self.playBarView?.listControl = listControl
+        self.playBarView?.frame = frame
+        self.playBarView?.setupUI()
+        self.playBarView?.getData()
+        self.window?.rootViewController?.view.addSubview(self.playBarView!)
+        self.window?.rootViewController?.view.bringSubview(toFront: self.playBarView!)
+    }
+    
+    func loadPlayVC(listControl: ListMusicControl, disposeBag: DisposeBag) {
+        let playVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: playSongVCID) as! PlaySongViewController
+        playVC.listControl = listControl
+        playVC.disposeBag = disposeBag
+        self.window?.rootViewController?.present(playVC, animated: true, completion: nil)
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    //MARK: - RemoteControl
+    override func remoteControlReceived(with event: UIEvent?) {
+        guard let event = event else {
+            return
+        }
+        
+        guard event.type == .remoteControl else {
+            return
+        }
+        
+        switch event.subtype {
+        case .remoteControlPlay:
+            self.playBarView?.listControl?.musicControl.play(completed: { (isSeek) in
+            })
+            break
+        case .remoteControlPause:
+            self.playBarView?.listControl?.musicControl.pause(completed: { (isPause) in
+            })
+            break
+        case .remoteControlNextTrack:
+            self.playBarView?.listControl?.next()
+            break
+        case .remoteControlPreviousTrack:
+            self.playBarView?.listControl?.previous()
+            break
+        default:
+            break
+        }
+    }
 }
 

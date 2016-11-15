@@ -176,6 +176,70 @@
             </objects>
             <point key="canvasLocation" x="2373.75" y="-576.76056338028172"/>
         </scene>
+        <!--Play Song View Controller-->
+        <scene sceneID="XZ9-Sx-5dp">
+            <objects>
+                <viewController storyboardIdentifier="PlaySongViewController" id="ocd-pC-wzC" customClass="PlaySongViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AYB-1I-uZi"/>
+                        <viewControllerLayoutGuide type="bottom" id="x1H-SW-gvM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XaC-26-uAb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-rF-lB7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="260.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-sl-Mpk">
+                                <rect key="frame" x="8" y="28" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZbX-sl-Mpk" secondAttribute="height" multiplier="1:1" id="oep-X3-GF9"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="img-player-hide"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-Gh-Mlv">
+                                <rect key="frame" x="280" y="28" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IXi-Gh-Mlv" secondAttribute="height" multiplier="1:1" id="W2n-jJ-L1A"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="img-player-option"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j3N-d7-Wcw">
+                                <rect key="frame" x="0.0" y="260.5" width="320" height="307.5"/>
+                                <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YZT-rF-lB7" firstAttribute="height" secondItem="XaC-26-uAb" secondAttribute="height" multiplier="5.5: 12" id="1qG-aG-6hg"/>
+                            <constraint firstItem="ZbX-sl-Mpk" firstAttribute="top" secondItem="AYB-1I-uZi" secondAttribute="bottom" constant="8" id="8d6-9J-s7e"/>
+                            <constraint firstItem="YZT-rF-lB7" firstAttribute="top" secondItem="XaC-26-uAb" secondAttribute="top" id="BIW-Uz-r9A"/>
+                            <constraint firstItem="IXi-Gh-Mlv" firstAttribute="top" secondItem="AYB-1I-uZi" secondAttribute="bottom" constant="8" id="EEL-Hk-7vx"/>
+                            <constraint firstItem="j3N-d7-Wcw" firstAttribute="centerX" secondItem="XaC-26-uAb" secondAttribute="centerX" id="Nc5-eq-EVh"/>
+                            <constraint firstItem="x1H-SW-gvM" firstAttribute="top" secondItem="j3N-d7-Wcw" secondAttribute="bottom" id="VbF-5l-Gvd"/>
+                            <constraint firstItem="ZbX-sl-Mpk" firstAttribute="width" secondItem="XaC-26-uAb" secondAttribute="width" multiplier="0.1" id="hgI-p5-fOb"/>
+                            <constraint firstItem="j3N-d7-Wcw" firstAttribute="width" secondItem="XaC-26-uAb" secondAttribute="width" id="m3c-36-cS2"/>
+                            <constraint firstItem="YZT-rF-lB7" firstAttribute="width" secondItem="XaC-26-uAb" secondAttribute="width" id="mE1-Yj-OGq"/>
+                            <constraint firstItem="j3N-d7-Wcw" firstAttribute="top" secondItem="YZT-rF-lB7" secondAttribute="bottom" id="oBL-yY-YoL"/>
+                            <constraint firstItem="YZT-rF-lB7" firstAttribute="centerX" secondItem="XaC-26-uAb" secondAttribute="centerX" id="pov-fN-pvY"/>
+                            <constraint firstItem="IXi-Gh-Mlv" firstAttribute="width" secondItem="XaC-26-uAb" secondAttribute="width" multiplier="0.1" id="sXy-sN-bIS"/>
+                            <constraint firstAttribute="trailing" secondItem="IXi-Gh-Mlv" secondAttribute="trailing" constant="8" id="vEE-5l-ScE"/>
+                            <constraint firstItem="ZbX-sl-Mpk" firstAttribute="leading" secondItem="XaC-26-uAb" secondAttribute="leading" constant="8" id="xgL-ir-VVG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="ZbX-sl-Mpk" id="LBF-ct-Zi9"/>
+                        <outlet property="containerView" destination="YZT-rF-lB7" id="PRJ-yn-hBt"/>
+                        <outlet property="optionButton" destination="IXi-Gh-Mlv" id="P5E-t5-c24"/>
+                        <outlet property="tableView" destination="j3N-d7-Wcw" id="iM9-ot-I9W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJr-qR-aEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3309.375" y="-574.64788732394368"/>
+        </scene>
         <!--Discover Navigation Controller-->
         <scene sceneID="4B8-7X-eOd">
             <objects>
@@ -200,4 +264,8 @@
             <point key="canvasLocation" x="360" y="-574.64788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img-player-hide" width="22" height="22"/>
+        <image name="img-player-option" width="22" height="22"/>
+    </resources>
 </document>

@@ -83,6 +83,18 @@ class TopSongViewController: UIViewController {
     fileprivate func addEvent() {
         let backTap = UITapGestureRecognizer(target: self, action: #selector(tap))
         self.imageView.addGestureRecognizer(backTap)
+        
+        self.tableView.rx.modelSelected(Song.self).bindNext { (song) in
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let listControl = ListMusicControl(lists: self.listSong.value, musicControl: MusicControl(song: song))
+            guard let playBarView = appDelegate.playBarView else {
+                let rect = CGRect(x: 0, y: self.view.frame.height - 44.0, width: self.view.frame.width, height: 44.0)
+                appDelegate.loadPlayBarView(listControl: listControl, frame: rect)
+                return
+            }
+            
+            playBarView.reset(listControl: listControl)
+        }.addDisposableTo(self.disposeBag)
     }
     
     @objc

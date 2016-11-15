@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		755DA40B7BE10BC75BCCEDD9 /* Pods_Hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372FDBCC8B654B8CE95BD640 /* Pods_Hackathon.framework */; };
+		E1187D4A1DDB38DD00B3FF5C /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1187D491DDB38DD00B3FF5C /* Database.swift */; };
 		E1321E2E1DDAC3E100C24363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1321E2D1DDAC3E100C24363 /* AppDelegate.swift */; };
 		E1321E331DDAC3E100C24363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1321E311DDAC3E100C24363 /* Main.storyboard */; };
 		E1321E351DDAC3E100C24363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1321E341DDAC3E100C24363 /* Assets.xcassets */; };
@@ -29,12 +30,22 @@
 		E14C62FB1DDAFAF200B1ECCF /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14C62F91DDAFAF200B1ECCF /* SongTableViewCell.xib */; };
 		E14C62FD1DDAFE7100B1ECCF /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C62FC1DDAFE7100B1ECCF /* Source.swift */; };
 		E14C62FF1DDB01C200B1ECCF /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14C62FE1DDB01C200B1ECCF /* PlayBarView.xib */; };
+		E14C63011DDB03C900B1ECCF /* PlaySongView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14C63001DDB03C900B1ECCF /* PlaySongView.xib */; };
+		E1D942411DDB09AD00B70C55 /* PlayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D942401DDB09AD00B70C55 /* PlayBarView.swift */; };
+		E1D942471DDB09FB00B70C55 /* ListMusicControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D942431DDB09FB00B70C55 /* ListMusicControl.swift */; };
+		E1D942481DDB09FB00B70C55 /* MusicControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D942441DDB09FB00B70C55 /* MusicControl.swift */; };
+		E1D942491DDB09FB00B70C55 /* MusicControlOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D942451DDB09FB00B70C55 /* MusicControlOffline.swift */; };
+		E1D9424A1DDB09FB00B70C55 /* MusicControlOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D942461DDB09FB00B70C55 /* MusicControlOnline.swift */; };
+		E1D9424C1DDB0B3E00B70C55 /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9424B1DDB0B3E00B70C55 /* DataControl.swift */; };
+		E1D9424E1DDB163F00B70C55 /* PlaySongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9424D1DDB163F00B70C55 /* PlaySongViewController.swift */; };
+		E1D942501DDB181600B70C55 /* PlaySongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9424F1DDB181600B70C55 /* PlaySongView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		372FDBCC8B654B8CE95BD640 /* Pods_Hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38446DAA5A276A328DCD39C1 /* Pods-Hackathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon/Pods-Hackathon.debug.xcconfig"; sourceTree = "<group>"; };
 		608750D3FC1565DFDBCD1FEE /* Pods-Hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon/Pods-Hackathon.release.xcconfig"; sourceTree = "<group>"; };
+		E1187D491DDB38DD00B3FF5C /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E1321E2A1DDAC3E100C24363 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1321E2D1DDAC3E100C24363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1321E321DDAC3E100C24363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +69,15 @@
 		E14C62F91DDAFAF200B1ECCF /* SongTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		E14C62FC1DDAFE7100B1ECCF /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		E14C62FE1DDB01C200B1ECCF /* PlayBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
+		E14C63001DDB03C900B1ECCF /* PlaySongView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaySongView.xib; sourceTree = "<group>"; };
+		E1D942401DDB09AD00B70C55 /* PlayBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayBarView.swift; sourceTree = "<group>"; };
+		E1D942431DDB09FB00B70C55 /* ListMusicControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMusicControl.swift; sourceTree = "<group>"; };
+		E1D942441DDB09FB00B70C55 /* MusicControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicControl.swift; sourceTree = "<group>"; };
+		E1D942451DDB09FB00B70C55 /* MusicControlOffline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicControlOffline.swift; sourceTree = "<group>"; };
+		E1D942461DDB09FB00B70C55 /* MusicControlOnline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicControlOnline.swift; sourceTree = "<group>"; };
+		E1D9424B1DDB0B3E00B70C55 /* DataControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
+		E1D9424D1DDB163F00B70C55 /* PlaySongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongViewController.swift; sourceTree = "<group>"; };
+		E1D9424F1DDB181600B70C55 /* PlaySongView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +109,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E1187D481DDB38DD00B3FF5C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				E1187D491DDB38DD00B3FF5C /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		E1321E211DDAC3DF00C24363 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +140,8 @@
 			children = (
 				E1321E2D1DDAC3E100C24363 /* AppDelegate.swift */,
 				E1321E521DDAE44A00C24363 /* InternetService */,
+				E1D942421DDB09FB00B70C55 /* MusicControl */,
+				E1187D481DDB38DD00B3FF5C /* Database */,
 				E1321E4A1DDACCB000C24363 /* Model */,
 				E1321E4B1DDACCC900C24363 /* View */,
 				E1321E4C1DDACCF900C24363 /* Controller */,
@@ -151,6 +181,7 @@
 				E1321E311DDAC3E100C24363 /* Main.storyboard */,
 				E14C62F91DDAFAF200B1ECCF /* SongTableViewCell.xib */,
 				E14C62FE1DDB01C200B1ECCF /* PlayBarView.xib */,
+				E14C63001DDB03C900B1ECCF /* PlaySongView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,9 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				E14C62F01DDAF6B200B1ECCF /* DiscoverNavigationController.swift */,
-				E14C62ED1DDAF66100B1ECCF /* TransitionAnimation */,
 				E1321E4D1DDAE0D800C24363 /* Dicover */,
 				E1321E5B1DDAEDE300C24363 /* TopSong */,
+				E1D9423F1DDB095A00B70C55 /* PlaySong */,
+				E14C62ED1DDAF66100B1ECCF /* TransitionAnimation */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +230,28 @@
 				E14C62EE1DDAF66100B1ECCF /* NavigationTransition.swift */,
 			);
 			path = TransitionAnimation;
+			sourceTree = "<group>";
+		};
+		E1D9423F1DDB095A00B70C55 /* PlaySong */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9424B1DDB0B3E00B70C55 /* DataControl.swift */,
+				E1D942401DDB09AD00B70C55 /* PlayBarView.swift */,
+				E1D9424D1DDB163F00B70C55 /* PlaySongViewController.swift */,
+				E1D9424F1DDB181600B70C55 /* PlaySongView.swift */,
+			);
+			path = PlaySong;
+			sourceTree = "<group>";
+		};
+		E1D942421DDB09FB00B70C55 /* MusicControl */ = {
+			isa = PBXGroup;
+			children = (
+				E1D942431DDB09FB00B70C55 /* ListMusicControl.swift */,
+				E1D942441DDB09FB00B70C55 /* MusicControl.swift */,
+				E1D942451DDB09FB00B70C55 /* MusicControlOffline.swift */,
+				E1D942461DDB09FB00B70C55 /* MusicControlOnline.swift */,
+			);
+			path = MusicControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +291,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 3C7VUZNULA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -268,6 +327,7 @@
 				E1321E381DDAC3E100C24363 /* LaunchScreen.storyboard in Resources */,
 				E1321E351DDAC3E100C24363 /* Assets.xcassets in Resources */,
 				E1321E331DDAC3E100C24363 /* Main.storyboard in Resources */,
+				E14C63011DDB03C900B1ECCF /* PlaySongView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,21 +387,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1321E481DDACC9C00C24363 /* StringScore.swift in Sources */,
+				E1D942491DDB09FB00B70C55 /* MusicControlOffline.swift in Sources */,
+				E1D9424E1DDB163F00B70C55 /* PlaySongViewController.swift in Sources */,
+				E1187D4A1DDB38DD00B3FF5C /* Database.swift in Sources */,
 				E1321E561DDAE50400C24363 /* GenreCollectionViewCell.swift in Sources */,
+				E1D942411DDB09AD00B70C55 /* PlayBarView.swift in Sources */,
 				E14C62F11DDAF6B200B1ECCF /* DiscoverNavigationController.swift in Sources */,
 				E1321E4F1DDAE12E00C24363 /* DiscoverViewController.swift in Sources */,
 				E1321E5D1DDAEE0D00C24363 /* TopSongViewController.swift in Sources */,
 				E1321E5A1DDAE69300C24363 /* Extension.swift in Sources */,
 				E1321E491DDACC9C00C24363 /* Utils.swift in Sources */,
 				E1321E581DDAE56900C24363 /* Song.swift in Sources */,
+				E1D942471DDB09FB00B70C55 /* ListMusicControl.swift in Sources */,
 				E14C62FD1DDAFE7100B1ECCF /* Source.swift in Sources */,
+				E1D942501DDB181600B70C55 /* PlaySongView.swift in Sources */,
 				E1321E471DDACC9C00C24363 /* ShuffleArray.swift in Sources */,
 				E1321E2E1DDAC3E100C24363 /* AppDelegate.swift in Sources */,
 				E14C62EF1DDAF66100B1ECCF /* NavigationTransition.swift in Sources */,
 				E1321E451DDACC9C00C24363 /* Constant.swift in Sources */,
+				E1D942481DDB09FB00B70C55 /* MusicControl.swift in Sources */,
+				E1D9424C1DDB0B3E00B70C55 /* DataControl.swift in Sources */,
 				E14C62F71DDAFAE000B1ECCF /* SongTableViewCell.swift in Sources */,
 				E1321E511DDAE2A200C24363 /* Genre.swift in Sources */,
 				E1321E541DDAE4A300C24363 /* InternetService.swift in Sources */,
+				E1D9424A1DDB09FB00B70C55 /* MusicControlOnline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +456,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -436,6 +506,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -464,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38446DAA5A276A328DCD39C1 /* Pods-Hackathon.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3C7VUZNULA;
 				INFOPLIST_FILE = Hackathon/Info.plist;
@@ -478,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 608750D3FC1565DFDBCD1FEE /* Pods-Hackathon.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3C7VUZNULA;
 				INFOPLIST_FILE = Hackathon/Info.plist;

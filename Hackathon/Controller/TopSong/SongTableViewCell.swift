@@ -13,21 +13,30 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var chooseView: UIView!
     
     var service: InternetService!
-
+    var song: Song!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.nameLabel.text = ""
+        self.artistLabel.text = ""
+        self.addButton.isHidden = true
+        self.chooseView.cornerCircle()
+        self.chooseView.isHidden = true
     }
     
     func setupUI(song: Song) {
+        self.song = song
         if let data = song.source?.sourceImage {
             self.layoutIfNeeded()
             self.songImageView.image = UIImage(data: data)
             self.songImageView.cornerCircle()
             self.nameLabel.text = song.name
             self.artistLabel.text = song.artist
+            self.addButton.isHidden = false
         } else {
             self.service = InternetService()
             do {
@@ -38,6 +47,7 @@ class SongTableViewCell: UITableViewCell {
                     self.artistLabel.text = song.artist
                     song.source = Source()
                     song.source?.sourceImage = UIImageJPEGRepresentation(image, 1.0)
+                    self.addButton.isHidden = false
                 }, errorResult: { 
                     print("not result")
                 }, errorConnect: { 
